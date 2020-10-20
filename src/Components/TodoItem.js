@@ -4,24 +4,23 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
 import Checkbox from '@material-ui/core/Checkbox';
+import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 const TodoItem = (props) => {
 
-    const [secondary, setSecondary] = useState(false);
-
     return (
         <ListItem>
-            <Checkbox
-                checked={secondary}
-                onChange={(event) => setSecondary(event.target.checked)}
-            />
+            <Checkbox onClick={() => props.completeTodo(props.todoIndex)} />
             <ListItemText
                 primary={`${props.todo.value}`}
             />
             <ListItemSecondaryAction>
-                <IconButton edge="end" aria-label="delete">
+                <IconButton edge="end" aria-label="delete" onClick={() => props.removeTodo(props.todoIndex)}>
                     <DeleteIcon />
+                </IconButton>
+                <IconButton edge="end" aria-label="edit">
+                    <EditIcon />
                 </IconButton>
             </ListItemSecondaryAction>
         </ListItem>
