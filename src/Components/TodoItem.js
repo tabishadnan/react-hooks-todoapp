@@ -13,6 +13,7 @@ const TodoItem = (props) => {
         <ListItem>
             <Checkbox onClick={() => props.completeTodo(props.todoIndex)} />
             <ListItemText
+                style={{textDecoration : props.completed ? "line-through" : "none"}}
                 primary={`${props.todo.value}`}
             />
             <ListItemSecondaryAction>

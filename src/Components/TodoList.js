@@ -35,6 +35,7 @@ const TodoList = (props) => {
                                     <div key={`${todo} ` + `${index}`}>
                                         <TodoItem todo={todo} todoIndex={index} removeTodo={props.removeTodo} 
                                         completeTodo={props.completeTodo}
+                                        completed={todo.isComplete}
                                         />
                                     </div>
                                 )
