@@ -36,6 +36,8 @@ const TodoList = (props) => {
                                         <TodoItem todo={todo} todoIndex={index} removeTodo={props.removeTodo} 
                                         completeTodo={props.completeTodo}
                                         completed={todo.isComplete}
+                                        showInput={todo.isShowInput}
+                                        editTodo={props.editTodo}
                                         />
                                     </div>
                                 )

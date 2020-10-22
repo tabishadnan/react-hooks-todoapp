@@ -32,12 +32,25 @@ const TodoApp = () => {
         setTodos(todosArrCopy);
     }
 
+    const editTodo = (index) => {
+
+        let todosArrCopy = [...todos];
+
+        todosArrCopy[index].isShowInput = true;
+
+        setTodos(todosArrCopy);
+    }
+
     return (
         <React.Fragment>
             <CssBaseline />
             <Container maxWidth="lg">
                 <TodoForm addTodos={addTodos} />
-                <TodoList todos={todos} removeTodo={removeTodo} completeTodo={completeTodo} />
+                <TodoList todos={todos} 
+                removeTodo={removeTodo} 
+                completeTodo={completeTodo}
+                editTodo={editTodo}
+                />
             </Container>
         </React.Fragment>
     )
