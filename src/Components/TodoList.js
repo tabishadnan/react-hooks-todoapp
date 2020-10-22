@@ -38,6 +38,7 @@ const TodoList = (props) => {
                                         completed={todo.isComplete}
                                         showInput={todo.isShowInput}
                                         editTodo={props.editTodo}
+                                        saveTodo={props.saveTodo}
                                         />
                                     </div>
                                 )

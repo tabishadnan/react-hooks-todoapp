@@ -41,6 +41,19 @@ const TodoApp = () => {
         setTodos(todosArrCopy);
     }
 
+    const saveTodo = (newVal,index) => {
+
+        let todosArrCopy = [...todos];
+
+        todosArrCopy[index].value = newVal;
+
+        setTodos(todosArrCopy);
+
+        todosArrCopy[index].isShowInput = false;
+
+        setTodos(todosArrCopy);
+    }
+
     return (
         <React.Fragment>
             <CssBaseline />
@@ -50,6 +63,7 @@ const TodoApp = () => {
                 removeTodo={removeTodo} 
                 completeTodo={completeTodo}
                 editTodo={editTodo}
+                saveTodo={saveTodo}
                 />
             </Container>
         </React.Fragment>

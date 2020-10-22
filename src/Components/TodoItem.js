@@ -1,4 +1,5 @@
 import React , {useState} from 'react';
+import TodoEditForm from './TodoEditForm';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -20,14 +21,14 @@ const TodoItem = (props) => {
                 />
             </>}
             {props.showInput && <>
-                <TextField id="standard-basic" label="Standard" value={props.todo.value} />
+                <TodoEditForm todoVal={props.todo.value} todoIndex={props.todoIndex} saveTodo={props.saveTodo} />
             </>}
             <ListItemSecondaryAction>
+                {!props.showInput && <IconButton edge="end" aria-label="edit" onClick={() => props.editTodo(props.todoIndex)}>
+                    <EditIcon />
+                </IconButton>}
                 <IconButton edge="end" aria-label="delete" onClick={() => props.removeTodo(props.todoIndex)}>
                     <DeleteIcon />
-                </IconButton>
-                <IconButton edge="end" aria-label="edit" onClick={() => props.editTodo(props.todoIndex)}>
-                    <EditIcon />
                 </IconButton>
             </ListItemSecondaryAction>
         </ListItem>
