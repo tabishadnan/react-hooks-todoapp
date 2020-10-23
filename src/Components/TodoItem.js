@@ -14,7 +14,7 @@ const TodoItem = (props) => {
     return (
         <ListItem>
             {!props.showInput && <>
-                <Checkbox onClick={() => props.completeTodo(props.todoIndex)} />
+                <Checkbox checked={props.completed} onClick={() => props.completeTodo(props.todoIndex)} />
                 <ListItemText
                     style={{textDecoration : props.completed ? "line-through" : "none"}}
                     primary={`${props.todo.value}`}

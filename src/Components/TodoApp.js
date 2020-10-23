@@ -27,7 +27,7 @@ const TodoApp = () => {
 
         let todosArrCopy = [...todos];
 
-        todosArrCopy[index].isComplete = true;
+        todosArrCopy[index].isComplete = !todosArrCopy[index].isComplete;
 
         setTodos(todosArrCopy);
     }
